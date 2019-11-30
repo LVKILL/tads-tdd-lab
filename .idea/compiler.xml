@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tddmasterlab" />
         <module name="tdd-master-lab" />
+        <module name="tads-tdd-lab" />
       </profile>
     </annotationProcessing>
   </component>

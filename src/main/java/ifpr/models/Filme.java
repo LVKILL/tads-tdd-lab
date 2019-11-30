@@ -37,4 +37,8 @@ public class Filme {
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
+
+    public void aplicarDesconto(double novoValor){
+        this.preco = novoValor;
+    }
 }

@@ -1,11 +1,12 @@
 package ifpr.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Locacao {
 
-    private Filme filme;
+    private ArrayList<Filme> filme;
     private Usuario usuario;
     private Date dataLocacao;
     private Date dataDevolucao;
@@ -13,19 +14,19 @@ public class Locacao {
 
     public Locacao(){}
 
-    public Locacao(Filme filme, Usuario usuario, Date dataLocacao, Date dataDevolucao, Double valor) {
-        this.filme = filme;
+    public Locacao(ArrayList<Filme> filmes, Usuario usuario, Date dataLocacao, Date dataDevolucao, Double valor) {
+        this.filme = filmes;
         this.usuario = usuario;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
         this.valor = valor;
     }
 
-    public Filme getFilme() {
+    public ArrayList<Filme> getFilme() {
         return filme;
     }
 
-    public void setFilme(Filme filme) {
+    public void setFilme(ArrayList<Filme> filme) {
         this.filme = filme;
     }
 
@@ -54,7 +55,10 @@ public class Locacao {
     }
 
     public Double getValor() {
-        return filme.getPreco();
+        for(int i = 0; i<filme.size(); i++){
+            valor += filme.get(i).getPreco();
+        }
+        return this.valor;
     }
 
     public void setValor(Double valor) {
